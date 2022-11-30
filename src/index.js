@@ -22,21 +22,29 @@ const fetchData = async () => {
     datos.data.forEach(item => {
         // crear titulo y asignar texto
         const title = document.createElement('h2');
-        title.classList.add('font-semibold', 'underline','decorate-sky-500', 'tracking-wide', 'text-xl', 'm-2', 'text-indigo-600')
+        title.classList.add('font-semibold', 'underline','decorate-sky-500', 'tracking-wide', 'text-xl', 'm-2', 'text-indigo-600','h-1/%')
         title.textContent = item.name;
         // crear precio
         const price = document.createElement('div');
-        price.classList.add('text-gray-900',)
-        price.textContent = `$${item.price} dlls x kg`;
+        price.classList.add('text-gray-500',)
+        price.textContent = `$${item.price} kg`;
+        // inserto contenedor del texto
+        const textContainer = document.createElement('div');
+        textContainer.classList.add('h-1/3','flex','justify-center', 'flex-col')
+        textContainer.append(title, price)
         //crear imagen
         const image = document.createElement('img');
+        image.classList.add('w-52', 'h-2/3',)
         image.src = `${baseAPI}${item.image}`
 
         // creamos contenedor de todos los elementos
         const divContainer = document.createElement('div');
-        divContainer.classList.add('border-2', 'border-gray-200', 'rounded-md')
+        divContainer.classList.add('h-80','border-2','-z-10','border-gray-200', 'rounded-md','flex','flex-col','justify-end', 'cursor-pointer' ,'transform','delay-150','hover:translate-y-150','hover:scale-110','duration-300','bg-white','hover:z-40','hover:border-gray-600','my-1')
+
+        // 'transition','delay-150','hover:-translate-y-4','hover:scale-150','duration-300'
+
         // ingresamos todo los elementos en un contenedor
-        divContainer.append(title, price, image);
+        divContainer.append(textContainer, image);
         // insertamos los datos en el body 
         document.body.appendChild(divContainer);
 
