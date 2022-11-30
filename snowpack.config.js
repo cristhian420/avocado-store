@@ -7,4 +7,9 @@ module.exports = {
   buildOptions: {
     baseUrl: '',
   },
+  theme: {
+    minWidth: {
+      '5': '250px'
+    }
+  }
 }
