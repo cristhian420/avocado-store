@@ -34,12 +34,12 @@ const fetchData = async () => {
         textContainer.append(title, price)
         //crear imagen
         const image = document.createElement('img');
-        image.classList.add('w-52', 'h-2/3',)
+        image.classList.add('w-100', 'h-2/3',)
         image.src = `${baseAPI}${item.image}`
 
         // creamos contenedor de todos los elementos
         const divContainer = document.createElement('div');
-        divContainer.classList.add('h-80','border-2','-z-10','border-gray-200', 'rounded-md','flex','flex-col','justify-end', 'cursor-pointer' ,'transform','delay-150','hover:translate-y-150','hover:scale-110','duration-300','bg-white','hover:z-40','hover:border-gray-600','my-1')
+        divContainer.classList.add('w-64','h-80','border-2','-z-10','border-gray-200', 'rounded-md','flex','flex-col','justify-end', 'cursor-pointer' ,'transform','delay-150','hover:translate-y-150','hover:scale-110','duration-300','bg-white','hover:z-40','hover:border-gray-600','my-1', 'max-w-full','min-w-5')
 
         // 'transition','delay-150','hover:-translate-y-4','hover:scale-150','duration-300'
 
